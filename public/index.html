@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Pixels</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>🧩 Editor de Pixels</h1>
+    <div class="toolbar">
+      <label class="btn">
+        📁 Carregar
+        <input type="file" id="upload" accept="image/*" hidden />
+      </label>
+
+      <!-- Editor de cores -->
+      <div class="color-picker">
+        <label for="colorPicker">🎨 Cor:</label>
+        <input type="color" id="colorPicker" value="#00bfff" />
+      </div>
+
+      <div class="color-editor">
+        <div id="colorPreview" class="color-preview"></div>
+        <button id="selectColor" class="btn success">✅ Selecionar</button>
+      </div>
+
+      <!-- Ferramentas -->
+      <button id="brush" class="btn">🖌️ Pincel</button>
+      <button id="pickColorFromImage" class="btn">🎯 Pegar Cor da Imagem</button>
+      <button id="zoomIn" class="btn">🔍 Zoom +</button>
+      <button id="zoomOut" class="btn">🔎 Zoom -</button>
+      <button id="saveBtn" class="btn success">💾 Download</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <main id="mainContainer">
+      <div id="gridContainer">
+        <div id="canvasContainer">
+          <div id="pixelGrid"></div>
+        </div>
+      </div>
+    </main>
+  </main>
+
+  <footer>
+    <!-- MODAL DE CONFIRMAÇÃO -->
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <p>Já existe uma imagem carregada.<br>Deseja salvar a imagem atual antes de carregar outra?</p>
+        <div class="modal-buttons">
+          <button id="saveAndLoad" class="btn success">💾 Salvar e carregar</button>
+          <button id="replaceWithoutSave" class="btn warning">🔁 Substituir sem salvar</button>
+          <button id="cancelLoad" class="btn danger">❌ Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
